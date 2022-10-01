@@ -19,7 +19,7 @@ Future<File> writeContent(
   final file = await _localFile;
   // Write the file
   return file
-      .writeAsString('$DateTime.now(): $category  $description    $value');
+      .writeAsString('${DateTime.now()}: $category  $description    $value\n');
 }
 
 Future<String> readcontent() async {
