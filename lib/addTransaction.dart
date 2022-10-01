@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class SecondPage extends StatelessWidget {
-  const SecondPage({Key? key, required this.title}) : super(key: key);
+class AddTransactions extends StatelessWidget {
+  const AddTransactions({Key? key, required this.title}) : super(key: key);
   final String title;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text("Add a Transaction"),
       ),
       body: Center(
         child: TextButton(
