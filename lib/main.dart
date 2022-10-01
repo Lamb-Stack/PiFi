@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pi_fi/AllTransactions.dart';
+import 'package:pi_fi/calendar.dart';
 import 'addTransaction.dart';
 
 void main() {
@@ -34,15 +35,29 @@ class FirstPage extends StatelessWidget {
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
-        child: TextButton(
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return AllTransactions(
-                  title: 'All Transactions',
-                  dateRange: 'October 1st - October 8th');
-            }));
-          },
-          child: const Text('Transactions'),
+        child: Column(
+          children: [
+            TextButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const AllTransactions(
+                    title: 'All Transactions',
+                    dateRange: 'October 1st - October 8th',
+                    transactions: [],
+                  );
+                }));
+              },
+              child: const Text('Transactions'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Calendar();
+                }));
+              },
+              child: const Text('Calendar'),
+            ),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(

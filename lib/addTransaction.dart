@@ -1,14 +1,5 @@
 import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 import 'package:flutter/material.dart';
-import 'package:sqflite/sqflite.dart';
-
-Future<void> insertData(String description, String category, int value) async {
-  database = await openDatabase(
-    join(await getDatabasesPath(), 'databaseName.db'),
-    onCreate: (db, version) {},
-    version: 1,
-  );
-}
 
 class AddTransaction extends StatefulWidget {
   const AddTransaction({super.key});
