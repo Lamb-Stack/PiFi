@@ -46,7 +46,7 @@ class FirstPage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return const AddTransactions(title: 'Add Transaction');
+            return const AddTransaction();
           }));
         },
         tooltip: 'Increment',
