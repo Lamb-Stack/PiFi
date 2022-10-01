@@ -37,7 +37,9 @@ class FirstPage extends StatelessWidget {
         child: TextButton(
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return const AllTransactions(title: 'All Transactions');
+              return AllTransactions(
+                  title: 'All Transactions',
+                  dateRange: 'October 1st - October 8th');
             }));
           },
           child: const Text('Transactions'),
@@ -46,7 +48,7 @@ class FirstPage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return const AddTransactions(title: 'Add Transaction');
+            return const AddTransaction();
           }));
         },
         tooltip: 'Increment',

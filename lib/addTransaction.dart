@@ -1,21 +1,68 @@
+import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-class AddTransactions extends StatelessWidget {
-  const AddTransactions({Key? key, required this.title}) : super(key: key);
-  final String title;
+class AddTransaction extends StatefulWidget {
+  const AddTransaction({super.key});
+
+  @override
+  AddTransactionState createState() {
+    return AddTransactionState();
+  }
+}
+
+class AddTransactionState extends State<AddTransaction> {
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Add a Transaction"),
-      ),
-      body: Center(
-        child: TextButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Go Back'),
-        ),
+      key: _formKey,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          TextFormField(
+            // The validator receives the text that the user has entered.
+            validator: (value) {
+              return (value != null && value.length < 101)
+                  ? 'Over 100 characters'
+                  : null;
+            },
+            decoration: const InputDecoration(
+              border: UnderlineInputBorder(),
+              labelText: 'Brief Description:',
+            ),
+          ),
+          TextFormField(
+            // The validator receives the text that the user has entered.
+            validator: (value) {
+              return (value != null && value.length < 101)
+                  ? 'Over 100 characters'
+                  : null;
+            },
+            decoration: const InputDecoration(
+              border: UnderlineInputBorder(),
+              labelText: 'Category:',
+            ),
+          ),
+          TextField(
+            inputFormatters: [CurrencyTextInputFormatter()],
+            keyboardType: TextInputType.number,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            child: ElevatedButton(
+              onPressed: () {
+                // Validate returns true if the form is valid, or false otherwise.
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Processing Data')),
+                );
+                Navigator.pop(context);
+              },
+              child: const Text('Enter Transaction'),
+            ),
+          ),
+        ],
       ),
     );
   }
