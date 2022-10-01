@@ -92,3 +92,5 @@ class transactionList extends StatelessWidget {
     );
   }
 }
+@override
+Widget buildSubtitle(BuildContext context) => const SizedBox.shrink();
