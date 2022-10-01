@@ -15,27 +15,36 @@ class CalendarState extends State<Calendar> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Calendar"),
-      ),
-      body: TableCalendar(
-        focusedDay: DateTime.now(),
-        firstDay: DateTime(2022, 7),
-        lastDay: DateTime(2023, 1),
-        calendarFormat: format,
-        onFormatChanged: (CalendarFormat _format) {
-          setState(() {
-            format = _format;
-          });
-        },
-        daysOfWeekVisible: true,
-        onDaySelected: (DateTime selectDay, DateTime focusDay) {
-          setState(() {
-            selectedDay = selectDay;
-            focusedDay = focusDay;
-          });
-        },
-      ),
-    );
+        appBar: AppBar(
+          title: Text("Calendar"),
+        ),
+        body: TableCalendar(
+            focusedDay: DateTime.now(),
+            firstDay: DateTime(2022, 7),
+            lastDay: DateTime(2023, 1),
+            calendarFormat: format,
+            onFormatChanged: (CalendarFormat _format) {
+              setState(() {
+                format = _format;
+              });
+            },
+            daysOfWeekVisible: true,
+            onDaySelected: (DateTime selectDay, DateTime focusDay) {
+              setState(() {
+                selectedDay = selectDay;
+                focusedDay = focusDay;
+              });
+            },
+            selectedDayPredicate: (DateTime date) {
+              return isSameDay(selectedDay, date);
+            },
+            calendarStyle: CalendarStyle(
+              isTodayHighlighted: true,
+              selectedDecoration: BoxDecoration(
+                color: Colors.teal,
+                shape: BoxShape.circle,
+              ),
+              selectedTextStyle: TextStyle(color: Colors.white),
+            )));
   }
 }
