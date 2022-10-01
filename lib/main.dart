@@ -1,8 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'AllTransactions.dart';
+import 'package:pi_fi/AllTransactions.dart';
 import 'package:pi_fi/calendar.dart';
+import 'package:pi_fi/pie_chart.dart';
 import 'addTransaction.dart';
 import 'chart_view.dart';
 
@@ -40,13 +41,21 @@ class FirstPage extends StatelessWidget {
         // in the middle of the parent.
         child: Column(
           children: [
-            TextButton(
+            ElevatedButton(
+              child: const Text("View Transactions"),
+              style: ElevatedButton.styleFrom(
+                  primary: Colors.lightBlue,
+                  side: BorderSide(color: Colors.black, width: 50),
+                  textStyle: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 25,
+                    fontStyle: FontStyle.normal,
+                  )),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return const AllTransactions();
                 }));
               },
-              child: const Text('Transactions'),
             ),
             ElevatedButton(
               child: const Text("Calendar"),
@@ -64,16 +73,24 @@ class FirstPage extends StatelessWidget {
                 }));
               },
             ),
-            TextButton(
+            ElevatedButton(
+              child: const Text("All Time Spending"),
+              style: ElevatedButton.styleFrom(
+                  primary: Colors.lightBlue,
+                  side: BorderSide(color: Colors.black, width: 50),
+                  textStyle: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 25,
+                    fontStyle: FontStyle.normal,
+                  )),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return MyHomePage(
-                    title: 'My Spending Chart',
+                    title: '',
                   );
                 }));
               },
-              child: const Text('Pi Chart'),
-            )
+            ),
           ],
         ),
       ),
