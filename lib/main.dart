@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:pi_fi/AllTransactions.dart';
+import 'AllTransactions.dart';
 import 'package:pi_fi/calendar.dart';
 import 'addTransaction.dart';
 import 'chart_view.dart';
@@ -43,11 +43,7 @@ class FirstPage extends StatelessWidget {
             TextButton(
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const AllTransactions(
-                    title: 'All Transactions',
-                    dateRange: 'October 1st - October 8th',
-                    transactions: [],
-                  );
+                  return const AllTransactions();
                 }));
               },
               child: const Text('Transactions'),
@@ -72,7 +68,7 @@ class FirstPage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return MyHomePage(
-                    title: 'Hi!',
+                    title: 'My Spending Chart',
                   );
                 }));
               },
