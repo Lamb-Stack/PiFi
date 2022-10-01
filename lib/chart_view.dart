@@ -25,7 +25,7 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               ChartContainer(
                   title: 'Pie Chart',
-                  color: Color.fromARGB(230, 189, 140, 205),
+                  color: Color.fromARGB(230, 141, 137, 136),
                   chart: PieChartContent()),
             ],
           ),
