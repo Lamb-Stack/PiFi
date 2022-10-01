@@ -5,17 +5,14 @@ import 'package:table_calendar/table_calendar.dart';
 
 class Calendar extends StatefulWidget {
   @override
-  Calendar createState() => _CalendarState(title: "this");
+  CalendarState createState() => CalendarState();
 }
 
-class _CalendarState extends State<Calendar> {
+class CalendarState extends State<Calendar> {
   CalendarFormat format = CalendarFormat.month;
   DateTime selectedDay = DateTime.now();
   DateTime focusedDay = DateTime.now();
 
-  _CalendarState({Key? key, required this.title}) : super(key: key);
-  final String title;
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
