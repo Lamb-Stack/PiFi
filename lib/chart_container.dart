@@ -34,6 +34,12 @@ class ChartContainer extends StatelessWidget {
                   fontSize: 16,
                   fontWeight: FontWeight.bold),
             ),
+            TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'KEY GOES HERE',
+              ),
+            ),
             Expanded(
                 child: Container(
               padding: EdgeInsets.only(top: 10),
