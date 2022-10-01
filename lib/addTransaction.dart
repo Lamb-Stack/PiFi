@@ -7,7 +7,7 @@ class AddTransactions extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("All Transactions"),
+        title: Text("Add a Transaction"),
       ),
       body: Center(
         child: TextButton(
