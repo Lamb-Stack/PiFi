@@ -45,6 +45,10 @@ class AddTransactionState extends State<AddTransaction> {
               labelText: 'Category:',
             ),
           ),
+          TextField(
+            inputFormatters: [CurrencyTextInputFormatter()],
+            keyboardType: TextInputType.number,
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: ElevatedButton(
