@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const CourtSide());
+  runApp(const pifi());
 }
 
-class CourtSide extends StatelessWidget {
-  const CourtSide({super.key});
+class pifi extends StatelessWidget {
+  const pifi({super.key});
 
   // This widget is the root of your application.
   @override
@@ -24,7 +24,7 @@ class CourtSide extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.grey,
       ),
-      home: const MyHomePage(title: '70803 Testing'),
+      home: const MyHomePage(title: "PiFi: It's as easy as pi"),
     );
   }
 }
@@ -50,7 +50,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
-  void _incrementCounter() {
+  void _addTransaction() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
@@ -96,28 +96,13 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: const <Widget>[
             Text(
-              'Team Members:',
-            ),
-            Text(
-              'Hayden: [Your Name Here]',
-            ),
-            Text(
-              'Sam: ScH',
-            ),
-            Text(
-              'Sean: [Your Name Here]',
-            ),
-            Text(
-              'Luke: Luke LeGoullon',
-            ),
-            Text(
-              'Max: Max Reulet',
+              'Stuff Goes Here',
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: _addTransaction,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
