@@ -6,6 +6,9 @@ import 'package:flutter/widgets.dart';
 class PieChartContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return PieChart(PieChartData(sections: pieChartSectionData));
+    return PieChart(PieChartData(
+        centerSpaceRadius: 0,
+        sectionsSpace: 0,
+        sections: getSectionData(MediaQuery.of(context).size.width)));
   }
 }
