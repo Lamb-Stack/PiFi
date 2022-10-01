@@ -63,25 +63,6 @@ class FirstPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16.0),
               child: ElevatedButton(
-                child: const Text("Calendar"),
-                style: ElevatedButton.styleFrom(
-                    primary: Colors.lightBlue,
-                    side: BorderSide(color: Colors.black, width: 50),
-                    textStyle: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontStyle: FontStyle.normal,
-                    )),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return Calendar();
-                  }));
-                },
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16.0),
-              child: ElevatedButton(
                 child: const Text("Total Spending"),
                 style: ElevatedButton.styleFrom(
                     primary: Colors.lightBlue,
@@ -96,6 +77,25 @@ class FirstPage extends StatelessWidget {
                     return MyHomePage(
                       title: '',
                     );
+                  }));
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              child: ElevatedButton(
+                child: const Text("Calendar"),
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.lightBlue,
+                    side: BorderSide(color: Colors.black, width: 50),
+                    textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                      fontStyle: FontStyle.normal,
+                    )),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return Calendar();
                   }));
                 },
               ),
