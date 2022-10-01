@@ -5,25 +5,26 @@ class AllTransactions extends StatelessWidget {
   final String dateRange;
 
   const AllTransactions(
-      {super.key, required this.transactions, required this.dateRange});
+      {super.key,
+      required this.transactions,
+      required this.dateRange,
+      required String title});
 
   @override
   Widget build(BuildContext context) {
     const title = "Transaction History";
-    return MaterialApp(
-      title: title,
-      home: Scaffold(
-          appBar: AppBar(title: const Text(title)),
-          body: ListView.builder(
-            itemCount: transactions.length,
-            itemBuilder: (context, index) {
-              final transaction = transactions[index];
+    return Scaffold(
+      appBar: AppBar(title: const Text(title)),
+      body: ListView.builder(
+        itemCount: transactions.length,
+        itemBuilder: (context, index) {
+          final transaction = transactions[index];
 
-              return ListTile(
-                  title: transaction.buildTitle(context),
-                  subtitle: transaction.buildSubtitle(context));
-            },
-          )),
+          return ListTile(
+              title: transaction.buildTitle(context),
+              subtitle: transaction.buildSubtitle(context));
+        },
+      ),
     );
   }
 }
@@ -91,6 +92,5 @@ class transactionList extends StatelessWidget {
     );
   }
 }
-
 @override
 Widget buildSubtitle(BuildContext context) => const SizedBox.shrink();
