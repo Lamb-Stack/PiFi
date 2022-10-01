@@ -1,25 +1,22 @@
 import 'package:flutter/material.dart';
 
-class header extends StatelessWidget {
-  const header({super.key});
-
+class AllTransactions extends StatelessWidget {
+  const AllTransactions({Key? key, required this.title}) : super(key: key);
+  final String title;
   @override
   Widget build(BuildContext context) {
-    const transactionsTitle = "All Transactions";
-    return MaterialApp(title: transactionsTitle);
-  }
-}
-
-class transactions extends StatefulWidget {
-  const transactions({super.key});
-
-  @override
-  State<transactions> createState() => _transactionsState();
-}
-
-class _transactionsState extends State<transactions> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("All Transactions"),
+      ),
+      body: Center(
+        child: TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text('Go Back'),
+        ),
+      ),
+    );
   }
 }
