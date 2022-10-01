@@ -34,11 +34,12 @@ class ChartContainer extends StatelessWidget {
                   fontSize: 16,
                   fontWeight: FontWeight.bold),
             ),
-            TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'KEY GOES HERE',
-              ),
+            Text(
+              'T: Transport\nU: Utilities\nF: Food\nE: Entertainment\nM: Miscellaneous',
+              style: TextStyle(
+                  color: Color.fromARGB(255, 0, 0, 0),
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold),
             ),
             Expanded(
                 child: Container(
