@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'AllTransactions.dart';
 import 'package:pi_fi/calendar.dart';
@@ -46,13 +48,21 @@ class FirstPage extends StatelessWidget {
               },
               child: const Text('Transactions'),
             ),
-            TextButton(
+            ElevatedButton(
+              child: const Text("Calendar"),
+              style: ElevatedButton.styleFrom(
+                  primary: Colors.lightBlue,
+                  side: BorderSide(color: Colors.black, width: 50),
+                  textStyle: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 25,
+                    fontStyle: FontStyle.normal,
+                  )),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return Calendar();
                 }));
               },
-              child: const Text('Calendar'),
             ),
             TextButton(
               onPressed: () {
