@@ -15,6 +15,7 @@ class AddTransactionState extends State<AddTransaction> {
 
   @override
   Widget build(BuildContext context) {
+    String description;
     return Scaffold(
       appBar: AppBar(
         title: Text("Add Transaction"),
@@ -28,11 +29,7 @@ class AddTransactionState extends State<AddTransaction> {
             children: [
               TextFormField(
                 // The validator receives the text that the user has entered.
-                validator: (value) {
-                  return (value != null && value.length < 101)
-                      ? 'Over 100 characters'
-                      : null;
-                },
+                maxLength: 100,
                 decoration: const InputDecoration(
                   border: UnderlineInputBorder(),
                   labelText: 'Brief Description:',
@@ -40,11 +37,7 @@ class AddTransactionState extends State<AddTransaction> {
               ),
               TextFormField(
                 // The validator receives the text that the user has entered.
-                validator: (value) {
-                  return (value != null && value.length < 101)
-                      ? 'Over 100 characters'
-                      : null;
-                },
+                maxLength: 100,
                 decoration: const InputDecoration(
                   border: UnderlineInputBorder(),
                   labelText: 'Category:',
