@@ -1,0 +1,11 @@
+name: Automated Testing
+
+on: [pull_request]
+
+jobs:
+  Run-Flutter-Test:
+    name: "Flutter test"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: subosito/flutter-action@v2
+      - run: flutter test
