@@ -58,7 +58,7 @@ class FirstPage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return MyHomePage(
-                    title: 'Hi!',
+                    title: 'My Spending Chart',
                   );
                 }));
               },
