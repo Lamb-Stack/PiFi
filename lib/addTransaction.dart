@@ -1,5 +1,6 @@
+import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 import 'package:flutter/material.dart';
-import 'package:moneytextformfield/moneytextformfield.dart';
+import 'package:flutter/services.dart';
 
 class AddTransaction extends StatefulWidget {
   const AddTransaction({super.key});
