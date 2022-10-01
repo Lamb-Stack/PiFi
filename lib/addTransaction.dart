@@ -51,7 +51,11 @@ class AddTransactionState extends State<AddTransaction> {
                 ),
               ),
               TextFormField(
-                inputFormatters: [CurrencyTextInputFormatter()],
+                inputFormatters: [
+                  CurrencyTextInputFormatter(
+                    symbol: "\$",
+                  )
+                ],
                 keyboardType: TextInputType.number,
                 controller: valController,
                 decoration: const InputDecoration(
