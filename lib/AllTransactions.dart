@@ -1,31 +1,10 @@
 import 'package:flutter/material.dart';
 
 class AllTransactions extends StatelessWidget {
-  const AllTransactions({Key? key, required this.title}) : super(key: key);
-  final String title;
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("All Transactions"),
-      ),
-      body: Center(
-        child: TextButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Go Back'),
-        ),
-      ),
-    );
-  }
-}
-
-class transactionList extends StatelessWidget {
   final List<ListItem> transactions;
   final String dateRange;
 
-  const transactionList(
+  const AllTransactions(
       {super.key, required this.transactions, required this.dateRange});
 
   @override
