@@ -1,5 +1,6 @@
 import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 import 'package:flutter/material.dart';
+import 'storageIO.dart';
 
 class AddTransaction extends StatefulWidget {
   const AddTransaction({super.key});
@@ -12,6 +13,10 @@ class AddTransaction extends StatefulWidget {
 
 class AddTransactionState extends State<AddTransaction> {
   final _formKey = GlobalKey<FormState>();
+
+  final descController = TextEditingController();
+  final catController = TextEditingController();
+  final valController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +34,7 @@ class AddTransactionState extends State<AddTransaction> {
             children: [
               TextFormField(
                 // The validator receives the text that the user has entered.
+                controller: descController,
                 maxLength: 100,
                 decoration: const InputDecoration(
                   border: UnderlineInputBorder(),
@@ -37,6 +43,7 @@ class AddTransactionState extends State<AddTransaction> {
               ),
               TextFormField(
                 // The validator receives the text that the user has entered.
+                controller: catController,
                 maxLength: 100,
                 decoration: const InputDecoration(
                   border: UnderlineInputBorder(),
@@ -46,6 +53,7 @@ class AddTransactionState extends State<AddTransaction> {
               TextFormField(
                 inputFormatters: [CurrencyTextInputFormatter()],
                 keyboardType: TextInputType.number,
+                controller: valController,
                 decoration: const InputDecoration(
                   border: UnderlineInputBorder(),
                   labelText: 'Amount:',
@@ -60,6 +68,8 @@ class AddTransactionState extends State<AddTransaction> {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(content: Text('Processing Data')),
                     );
+                    writeContent(catController.text, descController.text,
+                        valController.text);
                     Navigator.pop(context);
                   },
                   child: const Text('Enter Transaction'),
