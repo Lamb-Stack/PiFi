@@ -13,20 +13,18 @@ class AllTransactions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const title = "Transaction History";
-    return MaterialApp(
-      title: title,
-      home: Scaffold(
-          appBar: AppBar(title: const Text(title)),
-          body: ListView.builder(
-            itemCount: transactions.length,
-            itemBuilder: (context, index) {
-              final transaction = transactions[index];
+    return Scaffold(
+      appBar: AppBar(title: const Text(title)),
+      body: ListView.builder(
+        itemCount: transactions.length,
+        itemBuilder: (context, index) {
+          final transaction = transactions[index];
 
-              return ListTile(
-                  title: transaction.buildTitle(context),
-                  subtitle: transaction.buildSubtitle(context));
-            },
-          )),
+          return ListTile(
+              title: transaction.buildTitle(context),
+              subtitle: transaction.buildSubtitle(context));
+        },
+      ),
     );
   }
 }

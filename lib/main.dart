@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pi_fi/AllTransactions.dart';
 import 'package:pi_fi/calendar.dart';
 import 'addTransaction.dart';
+import 'chart_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -57,6 +58,16 @@ class FirstPage extends StatelessWidget {
               },
               child: const Text('Calendar'),
             ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return MyHomePage(
+                    title: 'Hi!',
+                  );
+                }));
+              },
+              child: const Text('Pi Chart'),
+            )
           ],
         ),
       ),
