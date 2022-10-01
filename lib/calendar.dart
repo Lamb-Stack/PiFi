@@ -25,7 +25,7 @@ class _calenderState extends State<Calendar> {
           focusedDay: DateTime.now(),
           firstDay: DateTime(2022, 7),
           lastDay: DateTime(2023, 1),
-          calenderFormat: format,
+          calendarFormat: format,
           onFormatChanged: (CalendarFormat _format) {
             set(() {
               format = _format;
