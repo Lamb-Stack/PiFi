@@ -5,7 +5,10 @@ class AllTransactions extends StatelessWidget {
   final String dateRange;
 
   const AllTransactions(
-      {super.key, required this.transactions, required this.dateRange});
+      {super.key,
+      required this.transactions,
+      required this.dateRange,
+      required String title});
 
   @override
   Widget build(BuildContext context) {
