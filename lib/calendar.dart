@@ -1,6 +1,7 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:pi_fi/event.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class Calendar extends StatefulWidget {
@@ -9,9 +10,20 @@ class Calendar extends StatefulWidget {
 }
 
 class CalendarState extends State<Calendar> {
+  late Map<DateTime, List<Event>> selectedEvents;
   CalendarFormat format = CalendarFormat.month;
   DateTime selectedDay = DateTime.now();
   DateTime focusedDay = DateTime.now();
+
+  @override
+  void initState() {
+    selectedEvents = {};
+    super.initState();
+  }
+
+  List<Event> _getEventsfromDay(DateTime date) {
+    return selectedEvents[date] ?? [];
+  }
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,6 +50,7 @@ class CalendarState extends State<Calendar> {
             selectedDayPredicate: (DateTime date) {
               return isSameDay(selectedDay, date);
             },
+            eventLoader: _getEventsfromDay,
             calendarStyle: CalendarStyle(
               isTodayHighlighted: true,
               selectedDecoration: BoxDecoration(
@@ -46,5 +59,26 @@ class CalendarState extends State<Calendar> {
               ),
               selectedTextStyle: TextStyle(color: Colors.white),
             )));
+    floatingActionButton:
+    FloatingActionButton.extended(
+      /*SAM HERE*/ onPressed: () => showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+                title: Text("Add Event"),
+                content: Text("Enter Event Title"),
+                actions: [
+                  TextButton(
+                    child: Text("Ok"),
+                    onPressed: () => Navigator.pop(context),
+                  ),
+                  TextButton(
+                    child: Text("Cancel"),
+                    onPressed: () => Navigator.pop(context),
+                  ),
+                ],
+              )),
+      label: Text("Add Event"),
+      icon: Icon(Icons.add),
+    );
   }
 }
