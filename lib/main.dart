@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const FirstPage(title: 'FirstPage'),
+      home: const FirstPage(title: 'Welcome to PiFi'),
     );
   }
 }
@@ -41,55 +41,64 @@ class FirstPage extends StatelessWidget {
         // in the middle of the parent.
         child: Column(
           children: [
-            ElevatedButton(
-              child: const Text("View Transactions"),
-              style: ElevatedButton.styleFrom(
-                  primary: Colors.lightBlue,
-                  side: BorderSide(color: Colors.black, width: 50),
-                  textStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 25,
-                    fontStyle: FontStyle.normal,
-                  )),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const AllTransactions();
-                }));
-              },
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              child: ElevatedButton(
+                child: const Text("View Transactions"),
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.lightBlue,
+                    side: BorderSide(color: Colors.black, width: 50),
+                    textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                      fontStyle: FontStyle.normal,
+                    )),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const AllTransactions();
+                  }));
+                },
+              ),
             ),
-            ElevatedButton(
-              child: const Text("Calendar"),
-              style: ElevatedButton.styleFrom(
-                  primary: Colors.lightBlue,
-                  side: BorderSide(color: Colors.black, width: 50),
-                  textStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 25,
-                    fontStyle: FontStyle.normal,
-                  )),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return Calendar();
-                }));
-              },
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              child: ElevatedButton(
+                child: const Text("Calendar"),
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.lightBlue,
+                    side: BorderSide(color: Colors.black, width: 50),
+                    textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                      fontStyle: FontStyle.normal,
+                    )),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return Calendar();
+                  }));
+                },
+              ),
             ),
-            ElevatedButton(
-              child: const Text("All Time Spending"),
-              style: ElevatedButton.styleFrom(
-                  primary: Colors.lightBlue,
-                  side: BorderSide(color: Colors.black, width: 50),
-                  textStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 25,
-                    fontStyle: FontStyle.normal,
-                  )),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return MyHomePage(
-                    title: '',
-                  );
-                }));
-              },
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              child: ElevatedButton(
+                child: const Text("Total Spending"),
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.lightBlue,
+                    side: BorderSide(color: Colors.black, width: 50),
+                    textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                      fontStyle: FontStyle.normal,
+                    )),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return MyHomePage(
+                      title: '',
+                    );
+                  }));
+                },
+              ),
             ),
           ],
         ),
